@@ -1,0 +1,19 @@
+<section class="wrapper">
+  <div class="left-side"></div>
+  <div class="right-side">
+    <h1> User profile</h1>
+    
+    <div class="profile-info">
+      <form [formGroup]="profileForm">
+        <label>First Name:</label><input formControlName="firstName" type="text" [value]="currentUser.firstName">
+        <label>Last Name:</label><input formControlName="lastName" type="text" [value]="currentUser.lastName" >
+        <label>Email:</label><input formControlName="email" type="text" [value]="currentUser.email" >
+      </form>
+    </div>
+    <div class="buttons-holder-bottom">
+      <button  class="button-click" (click)="logoutHandler()">Logout</button>
+      <button  class="button-click" [disabled]="canEdit" (click)="editProfileHandler(profileForm.value)">Edit</button>
+      <button  class="button-click"  (click)="deleteProfileHandler()">Delete Profile</button>
+    </div>
+  </div>
+</section>
